@@ -1,0 +1,137 @@
+---
+post_title: >
+  World’s first demonstration of a
+  programmable amplifier using a real
+  memristor
+author: mlabsadmin
+post_excerpt: ""
+layout: post
+permalink: >
+  /worlds-first-demonstration-of-a-programmable-amplifier-using-a-memristor/
+---
+Since our recent work on finding the world’s simplest and cheapest <span style="text-decoration: underline;"><a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6518277">memristor</a> </span>we set ourselves to demonstrate its applications. Scientists have discussed possibilities and efficiencies gained by using memristors in analog circuit design, such as reduction in area and power of a circuit. However, a  demonstration using <em>real</em> <em>memristor</em> is missing. Let us see this for the case of an amplifier, a basic unit in analog circuit design.
+
+Using the<span style="text-decoration: underline;"> <a href="http://www.mlabs.in/memristor"><em>world’s simplest memristor invented by mLabs</em></a></span>, we now demonstrate how we can make the world’s simplest and area-energy efficient programmable amplifier. Before, we get into it, let us think about how you would have made the programmable amplifier without a memristor? You will probably simulate one of the resistors in an opamp/CFOA-based amplifier with a programmable resistor. And that programmable resistor would have some active components, say a BJT/MOSFET/opamps. That would mean considerable area wasted, considerable power spent (it is active!) and working around the nonlinearities of these components.
+
+Using mLabs' recent <a href="http://www.mlabs.in/memristor"><span style="text-decoration: underline;">memristor</span></a> all these complex circuits for programmable amplifier will be replaced by a single memristor which itself is programmable thereby saving a lots of area and power.
+
+Technical Details:
+
+So, what do we have in the image shown here.
+
+&nbsp;
+
+<a href="http://mlabsresearch.com/blog/wp-content/uploads/2013/08/config_programmableAmp1.jpg"><img class="alignnone size-medium wp-image-104" alt="config_programmableAmp.eps" src="http://mlabsresearch.com/blog/wp-content/uploads/2013/08/config_programmableAmp1.jpg" width="300" height="193" /></a>
+
+It has an AD844 (Current Feedback Operational Amplifier, a component like an op-amp, read more <span style="text-decoration: underline;"><a href="www.analog.com/static/imported-files/data_sheets/AD844.pdf‎">here</a></span>), a resistor and our memristor, which is simply a galena crystal touching a copper wire. Note that we don’t have any extra circuitry to program our memristor, like PWM or FETs. This is because we can program simply based on maximum current and don’t need to create varying flux. So a super simple circuit with one active component, one resistance and one galena-copper contact and voila !
+
+In the image shown below we show input voltage. We measure the gain of the amplifier at a constant voltage of 0.56V. Using the same port, we give a programming voltage (leading to a programming current) of much higher amplitude. By varying the programming voltage, we create different programming currents of different values. You can correspondingly see in the following figure that the output voltage keeps changing for the 0.56V input after each programming current pulse.  Finally we provide a negative programming pulse and are able to recover it back to the initial gain!
+
+<a href="http://mlabsresearch.com/blog/wp-content/uploads/2013/08/figure_progAmp1.jpg"><img class="alignnone size-medium wp-image-86" alt="/host/matlab/bin/trianglematlab/analogProgrammable1/programmable" src="http://mlabsresearch.com/blog/wp-content/uploads/2013/08/figure_progAmp1" width="600" height="219" /></a>
+
+The following table explains the gain easily. (Read voltage = 0.56V)
+<table dir="ltr" cellspacing="0" cellpadding="0"><colgroup> <col width="152" /> <col width="207" /> <col width="227" /> <col width="162" /></colgroup>
+<tbody>
+<tr>
+<td data-sheets-rawvalue="Output Volt">Imax(peak value)</td>
+<td data-sheets-rawvalue="Gain">Output Volt</td>
+<td data-sheets-rawvalue="Imax(peak value)">Gain</td>
+<td data-sheets-rawvalue="%change wrt initial gain">%change wrt initial gain</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td data-sheets-rawvalue="2.666">-</td>
+<td data-sheets-rawvalue="4.7607">2.66</td>
+<td data-sheets-rawvalue="NA">4.75</td>
+<td data-sheets-rawvalue="NA">-</td>
+</tr>
+<tr>
+<td data-sheets-rawvalue="2.517">2.25  mA</td>
+<td data-sheets-rawvalue="4.49">2.51</td>
+<td data-sheets-rawvalue="2.25mA">4.49</td>
+<td data-sheets-rawvalue="5.68">5.5</td>
+</tr>
+<tr>
+<td data-sheets-rawvalue="2.449">3.80  mA</td>
+<td data-sheets-rawvalue="4.37">2.45</td>
+<td data-sheets-rawvalue="3.8mA">4.37</td>
+<td data-sheets-rawvalue="8.2">8</td>
+</tr>
+<tr>
+<td data-sheets-rawvalue="2.35">5.20  mA</td>
+<td data-sheets-rawvalue="4.19">2.35</td>
+<td data-sheets-rawvalue="5.2mA">4.19</td>
+<td data-sheets-rawvalue="11.98">11.7</td>
+</tr>
+<tr>
+<td data-sheets-rawvalue="2.638">-5.20 mA</td>
+<td data-sheets-rawvalue="4.71">2.64</td>
+<td data-sheets-rawvalue="-5.2mA">4.71</td>
+<td data-sheets-rawvalue="1.05">0.01</td>
+</tr>
+</tbody>
+</table>
+&nbsp;
+
+We saw very similar results with various coherers. The detailed results along with many other applications will soon be shared with the community.
+
+There you go, the world’s simplest programmable amplifier using the world’s simplest memristor.
+
+<strong>Why do I care ?</strong>
+
+We have demonstrated that commercial application in using memristor to design circuit is possible in the real world !
+
+While a part of the world debates what qualifies a good memristor, we have demonstrated applications using simple point contacts.
+
+Check the video of how simple point contact behave like memristor.
+
+&nbsp;
+
+http://www.youtube.com/watch?v=3ZRIPdr1lug
+
+&nbsp;
+
+Now not only scientists in high end research labs can use it but these applications can also be easily designed by any enthusiast, which is well within our aim of "<em><strong>Bringing memristor research from high-end research labs to DIY community</strong></em>"
+
+I hope this motivates you to design more applications using memristor.
+
+More to come, write to us if you have interesting applications.
+
+&nbsp;
+
+More Reading:
+
+IEEE Spectrum "<a href="http://spectrum.ieee.org/nanoclast/semiconductors/nanotechnology/the-memristors-fundamental-secrets-revealed">The Memristor’s Fundamental Secrets Revealed</a>"
+
+mLabs memristor work: Click <a href="http://www.mlabs.in/memristor">here</a>
+
+mLabs Research : Click <a href="http://mlabs.in/memristor/research/">here</a>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+Contributors: <em>Parth Chadha</em>, <em>Gaurav Gandhi</em>, <em>Varun Aggarwal</em>
+
+Featured image source: http://wifihighfive.blogspot.in
